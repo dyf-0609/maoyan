@@ -62,9 +62,10 @@ export default {
     .top-rated-list{
         white-space: nowrap;
         .top-rated-item{
-            display: inline-block;
+            float: left;
             width: 85px;
             overflow: hidden;
+            margin-right: 10px;
             .poster{
                 width: 85px;
                 height: 115px;

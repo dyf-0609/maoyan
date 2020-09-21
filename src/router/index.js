@@ -14,6 +14,7 @@ const routes = [{
                 name: 'movie',
                 component: () =>
                     import ( /* webpackChunkName:"movie" */ '../views/Movie'),
+                    redirect: '/movie/hot',
                 children: [{
                         path: 'hot',
                         name: 'hot',
@@ -22,10 +23,10 @@ const routes = [{
                             import ( /* webpackChunkName:"hot" */ '../views/Hot'),
                     },
                     {
-                        path: 'camera',
-                        name: 'camera',
+                        path: 'cinema',
+                        name: 'cinema',
                         component: () =>
-                            import ( /* webpackChunkName:"camera" */ '../views/Camera'),
+                            import ( /* webpackChunkName:"cinema" */ '../views/Cinema'),
                     },
                     {
                         path: 'unshow',
@@ -46,6 +47,57 @@ const routes = [{
                 name: 'video',
                 component: () =>
                     import ( /* webpackChunkName:"video" */ '../views/Video'),
+                    redirect: '/video/preShow',
+                children: [
+                    {
+                        path: 'preShow',
+                        name: 'preShow',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/preShow'),
+                    },
+                    {
+                        path: 'news',
+                        name: 'news',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/news'),
+                    },
+                    {
+                        path: 'weekly',
+                        name: 'weekly',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/weekly'),
+                    },
+                    {
+                        path: 'sayMovie',
+                        name: 'sayMovie',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/sayMovie'),
+                    },
+                    {
+                        path: 'goodVideo',
+                        name: 'goodVideo',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/goodVideo'),
+                    },
+                    {
+                        path: 'crime',
+                        name: 'crime',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/crime'),
+                    },
+                    {
+                        path: 'fantasy',
+                        name: 'fantasy',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/fantasy'),
+                    },
+                    {
+                        path: 'science',
+                        name: 'science',
+                        component: () =>
+                            import ( /* webpackChunkName:"video" */ '../views/video/science'),
+                    },
+                ]
             },
             {
                 path: 'small-video',
@@ -63,7 +115,7 @@ const routes = [{
     },
     {
         path: '**',
-        redirect: '/movie'
+        redirect: '/movie/hot'
     }
 
 ]

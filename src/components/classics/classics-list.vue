@@ -5,19 +5,24 @@
             <div class="item-img">
              <img :src="item.img" alt="">
             </div>   
-           <div class="item-content-wrap">
+            <div class="item-content-wrap">
              <div class="item-content">
                <div class="item-info">
                  <div class="item-title" >{{item.title}}</div>
                </div> 
                  <div class="item-detail" >
-                    <span class="num">{{item.english}}</span> 
+                    {{item.english}}
                 </div>
                 <div class="actor">
-                    主演:{{item.actors}}
+                    {{item.actors}}
                 </div>
                 <div class="date">{{item.showInfo}}</div>
-                 <div class="btn-buy" >{{item.grade}}</div> 
+                 <div class="btn-buy" v-if="item.grade==='暂无评分'">
+                     暂无评分  
+                </div> 
+                <div class="btn-buy" v-else>
+                    <span>{{item.grade}}</span>分
+                </div> 
               </div> 
            </div> 
           </li>
@@ -33,8 +38,8 @@ export default {
 }
 </script>
 
-<style scoped>
-/* .classics-list-wrap{
+<style lang="scss" scoped>
+ .classics-list-wrap{
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -45,11 +50,11 @@ export default {
             padding-left: 15px;
             overflow: hidden;
             .item-img{
-            width: 64px;
-            height: 90px;
-            margin-top: 12px;
-            float: left;
-            background-color: #e1e1e1;
+                width: 64px;
+                height: 90px;
+                margin-top: 12px;
+                float: left;
+                background-color: #e1e1e1;
                 img{
                     width: 100%;
                     height: 100%;
@@ -62,60 +67,54 @@ export default {
                 height: 90px;
                 max-height: 90px;
                 position: relative;
-                .item-content{
-                    padding-right: 5px;
-                    padding-bottom: 10px;
-                    padding-right: 48px;
-                    overflow: hidden;
-                    border-bottom: 1Px solid #e1e1e1;
-                    .item-info{
-                        max-height: 24px;
-                        margin-bottom: 7px;
-                        line-height: 24px;
+                    .item-content{
+                        padding-right: 5px;
+                        padding-bottom: 10px;
+                        padding-right: 48px;
                         overflow: hidden;
-                        .item-title{
-                            font-size: 17px;
-                            color: #333;
-                            font-weight: 700;
-                            padding-right: 5px;
+                        .item-info{
+                            max-height: 24px;
+                            margin-bottom: 7px;
+                            line-height: 24px;
+                            overflow: hidden;
+                            .item-title{
+                                font-size: 17px;
+                                color: #333;
+                                font-weight: 700;
+                                padding-right: 5px;
+                                margin-bottom: 4px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
+                        }
+                        .item-detail,.actor,.date{
                             text-overflow: ellipsis;
                             overflow: hidden;
                             white-space: nowrap;
+                            font-size: 13px;
+                            line-height: 18px;
+                            color: #666;
+                            margin-bottom: 4px;
                         }
-                    }
-                .item-detail{
-                    overflow: hidden;
-                    font-size: 13px;
-                    color: #666;
-                    .num{
-                        font-size: 16px;
-                        font-weight: 700;
-                        color: #faaf00;
-                    }
-                }
-                .actor,.date{
-                    margin-top: 6px;
-                    font-size: 13px;
-                    color: #666;
-                    line-height: 16px;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                }
-                .btn-buy{
-                    position: absolute;
-                    right: 7%;
-                    top: 40%;
-                    width: 47px;
-                    height: 27px;
-                    line-height: 28px;
-                    text-align: center;
-                    box-sizing: border-box;
-                    color: #fff;
-                }
+                        .btn-buy{
+                            position: absolute;
+                            right: 7%;
+                            top: 7%;
+                            font-size: 12px;
+                            color: #999;
+                            line-height: 17px;
+                            text-align: center;
+                            span{
+                                color: #faaf00;
+                                font-size: 15px;
+                                margin-right:5px;
+                            }
+                       }
+                    }  
             }
-            }
-        } 
-    }  
-} */
+        }
+    }
+}
+
 </style>

@@ -1,8 +1,9 @@
 <template>
+<app-scroll class="content">
 <div id="classic" class="subpage">
     <ClassicsList :data="classics"/>
 </div>
-  
+</app-scroll>
 </template>
 
 <script>
@@ -18,9 +19,16 @@ export default {
         })
     },
     created(){
-        this.$store.dispatch("movie/requsetClassics")
+        this.$store.dispatch("movie/requestClassics")
     }
 }
 </script>
 
-<style>
+<style lang="scss">
+.content{
+     width: 100%;
+     height: 91%;
+     overflow: hidden;  
+     touch-action: none; 
+}
+</style>>

@@ -7,7 +7,7 @@
         </div>
         <div class="switch">
             <router-link to="hot" class="switch-item" ><span>热映</span></router-link>
-            <router-link to="camera" class="switch-item"><span>影院</span></router-link>
+            <router-link to="cinema" class="switch-item"><span>影院</span></router-link>
             <router-link to="unshow" class="switch-item"><span>待映</span></router-link>
             <router-link to="classic" class="switch-item"><span>经典电影</span></router-link>
         </div>
@@ -71,10 +71,8 @@ export default {
                 padding: 0 5px;
                 position: relative;
                 &.router-link-active{
-                
                         color: #333;
-                        font-size: 17px;
-                  
+                        font-size: 17px;                  
                  &:after{
                     content: "";
                     display: block;
@@ -85,9 +83,8 @@ export default {
                     border-radius: 1px;
                     background-color: #f03d37;
                     transition: left 0.2s;
-                }  
-               }
-               
+                 }
+               } 
             }
         }
         .icon-sousuo{

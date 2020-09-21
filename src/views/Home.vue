@@ -6,7 +6,7 @@
         </header>
 
         <nav class="menu">
-            <router-link to="/movie/hot" class="menu-item">
+            <router-link to="/movie" class="menu-item">
                <span class="iconfont icon-dianying"></span>
                <span>电影/影院</span>
             </router-link>

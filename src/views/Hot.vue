@@ -32,8 +32,8 @@ export default {
     })
   },
   created(){
-    this.$store.dispatch("movie/requsetRated"),
-    this.$store.dispatch("movie/requsetMovieList")
+    this.$store.dispatch("movie/requestRated"),
+    this.$store.dispatch("movie/requestMovieList")
   }
 }
 </script>

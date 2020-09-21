@@ -23,5 +23,6 @@ html,body{
   bottom: 49px;
   width: 100%;
   overflow: hidden;
+  background-color: #f5f5f5;
 }
 </style>

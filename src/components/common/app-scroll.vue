@@ -39,7 +39,7 @@ export default {
       tap: true,
       click: true,
       probeType: 3,
-      // bounce:false,
+      bounce:false,
       scrollX: this.scrollX,
       scrollY: this.scrollY,
     });
