@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './assets/icon-font/iconfont.css'
 import Plugin from './plugin'
+Vue.prototype.$eventBus = new Vue();
 
 Vue.use(Plugin);
 
@@ -11,7 +12,7 @@ Vue.use(Plugin);
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

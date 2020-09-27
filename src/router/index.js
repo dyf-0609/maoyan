@@ -14,32 +14,37 @@ const routes = [{
                 name: 'movie',
                 component: () =>
                     import ( /* webpackChunkName:"movie" */ '../views/Movie'),
-                    redirect: '/movie/hot',
+                redirect: '/movie/hot',
                 children: [{
                         path: 'hot',
                         name: 'hot',
                         component: () =>
                             import ( /* webpackChunkName:"movie" */ '../views/movie/Hot'),
-                        children:[
+                        children: [{
+                                path: 'hotDetail',
+                                name: 'hotDetail',
+                                component: () =>
+                                    import ( /* webpackChunkName:"movie" */ '../views/movie/hotDetail'),
+                            },
                             {
-                            path:'hotDetail',
-                            name: 'hotDetail',
-                            component: () =>
-                            import ( /* webpackChunkName:"movie" */ '../views/movie/hotDetail'),
-                        },
-                        {
-                            path:'cinemasDetail',
-                            name: 'cinemasDetail',
-                            component: () =>
-                            import ( /* webpackChunkName:"movie" */ '../views/movie/cinemasDetail'),
-                        },
-                        {
-                            path:'seatBlock',
-                            name: 'seatBlock',
-                            component: () =>
-                            import ( /* webpackChunkName:"movie" */ '../views/movie/seatBlock'),
-                        }
-                    ]
+                                path: 'cinemasDetail',
+                                name: 'cinemasDetail',
+                                component: () =>
+                                    import ( /* webpackChunkName:"movie" */ '../views/movie/cinemasDetail'),
+                            },
+                            {
+                                path: 'seatBlock',
+                                name: 'seatBlock',
+                                component: () =>
+                                    import ( /* webpackChunkName:"movie" */ '../views/movie/seatBlock'),
+                            },
+                            {
+                                path: 'order',
+                                name: 'order',
+                                component: () =>
+                                    import ( /* webpackChunkName:"movie" */ '../views/movie/order'),
+                            },
+                        ]
                     },
                     {
                         path: 'cinema',
@@ -66,18 +71,17 @@ const routes = [{
                 name: 'video',
                 component: () =>
                     import ( /* webpackChunkName:"video" */ '../views/Video'),
-                    redirect: '/video/preShow',
-                children: [
-                    {
+                redirect: '/video/preShow',
+                children: [{
                         path: 'preShow',
                         name: 'preShow',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/preShow'),
-                        children:[{
-                            path:':id',
+                        children: [{
+                            path: ':id',
                             name: 'videoPlayer',
                             component: () =>
-                            import ( /* webpackChunkName:"video" */ '../views/video/videoPlayer'),
+                                import ( /* webpackChunkName:"video" */ '../views/video/videoPlayer'),
                         }]
                     },
                     {
@@ -85,11 +89,11 @@ const routes = [{
                         name: 'news',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/news'),
-                        children:[{
-                            path:':id',
+                        children: [{
+                            path: ':id',
                             name: 'newsPlayer',
                             component: () =>
-                            import ( /* webpackChunkName:"video" */ '../views/video/newsPlayer'),
+                                import ( /* webpackChunkName:"video" */ '../views/video/newsPlayer'),
                         }]
                     },
                     {
@@ -97,72 +101,72 @@ const routes = [{
                         name: 'weekly',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/weekly'),
-                            children:[{
-                                path:':id',
-                                name: 'weeklyPlayer',
-                                component: () =>
+                        children: [{
+                            path: ':id',
+                            name: 'weeklyPlayer',
+                            component: () =>
                                 import ( /* webpackChunkName:"video" */ '../views/video/weeklyPlayer'),
-                            }]
+                        }]
                     },
                     {
                         path: 'sayMovie',
                         name: 'sayMovie',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/sayMovie'),
-                            children:[{
-                                path:':id',
-                                name: 'sayMoviePlayer',
-                                component: () =>
+                        children: [{
+                            path: ':id',
+                            name: 'sayMoviePlayer',
+                            component: () =>
                                 import ( /* webpackChunkName:"video" */ '../views/video/sayMoviePlayer'),
-                            }]
+                        }]
                     },
                     {
                         path: 'goodVideo',
                         name: 'goodVideo',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/goodVideo'),
-                            children:[{
-                                path:':id',
-                                name: 'w/goodVideoPlayer',
-                                component: () =>
+                        children: [{
+                            path: ':id',
+                            name: 'w/goodVideoPlayer',
+                            component: () =>
                                 import ( /* webpackChunkName:"video" */ '../views/video//goodVideoPlayer'),
-                            }]
+                        }]
                     },
                     {
                         path: 'crime',
                         name: 'crime',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/crime'),
-                            children:[{
-                                path:':id',
-                                name: 'crimePlayer',
-                                component: () =>
+                        children: [{
+                            path: ':id',
+                            name: 'crimePlayer',
+                            component: () =>
                                 import ( /* webpackChunkName:"video" */ '../views/video/crimePlayer'),
-                            }]
+                        }]
                     },
                     {
                         path: 'fantasy',
                         name: 'fantasy',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/fantasy'),
-                            children:[{
-                                path:':id',
-                                name: 'fantasyPlayer',
-                                component: () =>
+                        children: [{
+                            path: ':id',
+                            name: 'fantasyPlayer',
+                            component: () =>
                                 import ( /* webpackChunkName:"video" */ '../views/video/fantasyPlayer'),
-                            }]
+                        }]
                     },
                     {
                         path: 'science',
                         name: 'science',
                         component: () =>
                             import ( /* webpackChunkName:"video" */ '../views/video/science'),
-                            children:[{
-                                path:':id',
-                                name: 'sciencePlayer',
-                                component: () =>
+                        children: [{
+                            path: ':id',
+                            name: 'sciencePlayer',
+                            component: () =>
                                 import ( /* webpackChunkName:"video" */ '../views/video/sciencePlayer'),
-                            }]
+                        }]
                     },
                 ]
             },
@@ -177,31 +181,30 @@ const routes = [{
                 name: 'my',
                 component: () =>
                     import ( /* webpackChunkName:"my" */ '../views/My'),
-                    redirect: '/my/meituan',
-                children:[
-                    {
-                        path:'meituan',
+                redirect: '/my/meituan',
+                children: [{
+                        path: 'meituan',
                         name: 'meituan',
                         component: () =>
-                        import ( /* webpackChunkName:"my" */ '../views/my/meituan'),
+                            import ( /* webpackChunkName:"my" */ '../views/my/meituan'),
                     },
                     {
-                        path:'phone',
+                        path: 'phone',
                         name: 'phone',
                         component: () =>
-                        import ( /* webpackChunkName:"my" */ '../views/my/phone'),
+                            import ( /* webpackChunkName:"my" */ '../views/my/phone'),
                     },
                     {
-                        path:'reset',
+                        path: 'reset',
                         name: 'reset',
                         component: () =>
-                        import ( /* webpackChunkName:"my" */ '../views/my/reset'),
+                            import ( /* webpackChunkName:"my" */ '../views/my/reset'),
                     },
                     {
-                        path:'pwd',
+                        path: 'pwd',
                         name: 'pwd',
                         component: () =>
-                        import ( /* webpackChunkName:"my" */ '../views/my/pwd'),
+                            import ( /* webpackChunkName:"my" */ '../views/my/pwd'),
                     },
                 ]
             }

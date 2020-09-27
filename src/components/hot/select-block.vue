@@ -58,9 +58,20 @@ export default {
       }
       console.log(this.selectedSeats);
       this.selectSeat(this.selectedSeats);
-    }
+    },
+    addCallback(index) {
+      console.log(this.selectedSeats);
+      this.selectedSeats.splice(index, 1);
+    },
   }
-
+,created() {
+    this.$eventBus.$on("del", this.addCallback);
+  },
+  beforeDestroy() {
+    // 移除监听
+    // eventBus.$off('add', this.addCallback);
+    this.$eventBus.$off("del", this.addCallback);
+  },
 }
 </script>
 

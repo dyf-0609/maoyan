@@ -48,6 +48,11 @@ export default {
         },
         selectSeat(arr){
             console.log(arr);
+            arr= arr.map(item=>{
+                return Object.values(item)[0]
+            })
+            // console.log(arr);
+            
             this.arr=arr;
             
         }
