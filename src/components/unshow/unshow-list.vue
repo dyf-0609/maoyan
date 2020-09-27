@@ -123,6 +123,7 @@ export default {
                 top: 40%;
                 width: 47px;
                 height: 27px;
+                font-size: 12px;
                 line-height: 28px;
                 text-align: center;
                 box-sizing: border-box;

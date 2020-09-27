@@ -1,48 +1,48 @@
 <template>
 <div class="rated-wrap">
-    <p class="rated-title">{{title}}</p>
+    <!-- <p class="rated-title">{{title}}</p>
     <app-scroll  :scrollX="true" :scrollY="false" :width="wrapWidth">
         <div class="top-rated" v-html="data" ref="wrap">    
         </div>
-  </app-scroll>
+  </app-scroll> -->
 </div>
 
 </template>
 
 <script>
-export default {
-    props:{
-        data:String
-    },
-    data(){
-        return{
-            wrapWidth:0,
-            title:''
-        }
-    },
-    mounted(){
+//export default {
+//     props:{
+//         data:String
+//     },
+//     data(){
+//         return{
+//             wrapWidth:0,
+//             title:''
+//         }
+//     },
+//     mounted(){
          
         
-    },
-    watch:{
-        data:{
-            handler(newVal){
-                this.$nextTick(()=>{
-                this.wrapWidth=this.$refs.wrap.offsetWidth;
-                const parent=this.$refs.wrap.querySelector('.top-rated');
-                const title=this.$refs.wrap.querySelector('.title');
-                    if(title){
-                        this.title=title.innerText;
-                        parent.removeChild(title);
-                    }
-                });    
-            },
-            immediate:true,
+//     },
+//     watch:{
+//         data:{
+//             handler(newVal){
+//                 this.$nextTick(()=>{
+//                 this.wrapWidth=this.$refs.wrap.offsetWidth;
+//                 const parent=this.$refs.wrap.querySelector('.top-rated');
+//                 const title=this.$refs.wrap.querySelector('.title');
+//                     if(title){
+//                         this.title=title.innerText;
+//                         parent.removeChild(title);
+//                     }
+//                 });    
+//             },
+//             immediate:true,
             
-        },
+//         },
         
-    }
-}
+//     }
+// }
 </script>
 
 <style lang="scss" >

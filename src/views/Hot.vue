@@ -41,7 +41,7 @@ export default {
 <style lang="scss">
 .content{
      width: 100%;
-     height: 91%;
+     height: 100%;
      overflow: hidden;  
      touch-action: none; 
 }

@@ -37,10 +37,8 @@ export default {
                 this.wrapWidth=this.$refs.wrap.offsetWidth;
                 });    
             },
-            immediate:true,
-            
-        },
-        
+            immediate:true,  
+        },  
     }
 
 }

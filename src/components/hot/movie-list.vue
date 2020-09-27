@@ -1,7 +1,7 @@
 <template>
   <div class="movie-list-wrap">
       <ul class="movie-list">
-          <li class="movie-item" v-for="item in data" :key="item.id">
+          <li class="movie-item" v-for="item in data" :key="item.id" @click="goHotDetailAction(item.id)">
               <div class="item-img">
                   <img :src="item.img" alt="">
               </div>
@@ -27,7 +27,9 @@
                         </div>
                         <div class="show">{{item.show}}</div>
                   </div>
-                  <div class="btn-buy" :class="{'btn-buy1':!item.globalReleased}">{{item.globalReleased?'购票':'预售'}}</div> 
+                  <div class="btn-buy" :class="{'btn-buy1':!item.globalReleased}" >
+                      {{item.globalReleased?'购票':'预售'}}
+                </div> 
              </div>                    
           </li>
       </ul>
@@ -39,13 +41,11 @@ export default {
     props:{
         data:Array
     },
-    data(){
-        return{
-            
+    methods:{
+        goHotDetailAction(id){
+            // console.log(id);
+            this.$router.push({path:'hot/hotDetail',query:{id}})
         }
-    },
-    mounted(){
-        
     }
 }
 </script>
@@ -143,6 +143,7 @@ export default {
                 width: 47px;
                 height: 27px;
                 line-height: 28px;
+                font-size: 12px;
                 text-align: center;
                 box-sizing: border-box;
                 background-color: #f03d37;
